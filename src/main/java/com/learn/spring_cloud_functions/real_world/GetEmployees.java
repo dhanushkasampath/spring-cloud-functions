@@ -1,5 +1,7 @@
 package com.learn.spring_cloud_functions.real_world;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
@@ -14,9 +16,12 @@ import java.util.function.Supplier;
  *
  * we can deploy this to aws. need to check on that
  */
+@Slf4j // this annotation comes with lombok. then no need to define logger as follows
+//  Logger logger = LoggerFactory.getLogger(ToUpperCaseByClass.class);
 public class GetEmployees implements Supplier<EmployeeInfo> {
     @Override
     public EmployeeInfo get() {
+        log.info("get method in GetEmployees called.!!");
         EmployeeInfo employeeInfo = new EmployeeInfo();
         employeeInfo.setEmployeeList(getEmployeeList());
         return employeeInfo;
