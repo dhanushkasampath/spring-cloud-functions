@@ -1,0 +1,28 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: spring-cloud-functions
+  cloud:
+    function:
+      scan:
+        packages: com.learn.spring_cloud_functions
+
+#we need to add a new build plugin
+
+
+#Below are the configurations related to logging. or else we can have a separate file as logback.xml
+
+#logging.level.com.learn = TRACE
+#logging.pattern.console = %d [%level] %c{1.} [%t] %m%n
+#logging.file = appLog.log
+#logging.pattern.file = %d [%level] %c{1.} [%t] %m%n
+
+logging:
+  level:
+    com:
+      learn: TRACE
+  pattern:
+    console: %d [%level] %c{1.} [%t] %m%n
+    file: %d [%level] %c{1.} [%t] %m%n
+  file: appLog.log

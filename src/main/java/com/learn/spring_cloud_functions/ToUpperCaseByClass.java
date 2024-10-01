@@ -7,6 +7,9 @@ import java.util.function.Function;
 
 //	Method 2 of implementing serverless functions
 
+//Note: which using this approach, we need to add a property to application.property of yml file saying this is the package
+// we are creating serverless functions.
+//spring.cloud.function.scan.packages=com.learn.spring_cloud_functions
 public class ToUpperCaseByClass implements Function<String, String> {
 
     Logger logger = LoggerFactory.getLogger(ToUpperCaseByClass.class);
@@ -23,4 +26,3 @@ public class ToUpperCaseByClass implements Function<String, String> {
     }
 }
 
-// Also we need to add a property to application.properties file saying this is the package we are creating serverless functions.
